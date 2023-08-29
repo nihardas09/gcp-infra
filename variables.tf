@@ -20,3 +20,11 @@ variable "project_id" {
 variable "region" {
   description = "region"
 }
+
+# variable "gke_sa_name" {
+#   description = "Service Account to be used by GKE"
+# }
+
+variable "gke_node_machine_type" {
+  description = "GKE node machine type"
+}

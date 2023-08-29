@@ -1,9 +1,15 @@
 # GKE cluster
 
-resource "google_service_account" "gkesa" {
-  account_id   = var.gke_sa_name
-  display_name = "Service Account"
+# GKE cluster
+data "google_container_engine_versions" "gke_version" {
+  location = var.region
+  version_prefix = "1.27."
 }
+
+# resource "google_service_account" "gkesa" {
+#   account_id   = var.gke_sa_name
+#   display_name = "Service Account"
+# }
 
 resource "google_container_cluster" "gkecluster" {
   name     = "${var.project_id}-gke"
